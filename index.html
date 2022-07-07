@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+    <h1>Convert Your Name</h1>
+    <h3>... to the language of computers</h3>
+    <label>Enter your Name</label>
+    <div class="fontuser">
+    <input type="text" id="input" class="input-box"><br>
+    <i class="fa fa-user" aria-hidden="true"></i>
+    </div>
+    <button onClick="convert();" class="button">Convert</button>
+   <div id="output-text">
+    <label>Your Binary Name</label>
+  <input id="output" class=" output-box"/>
+</div>
+</div>
+
+
+
+    <script>
+        function convert() {
+  var output = document.getElementById("output");
+  var input = document.getElementById("input").value;
+  var outputText=document.getElementById("output-text")
+  output.value = ""; 
+ outputText.style.display="block";
+  for (var i = 0; i < input.length; i++) {
+      output.value += input[i].charCodeAt(0).toString(2) +"";
+  }
+
+}
+    </script>
+     
+</body>
+</html>
